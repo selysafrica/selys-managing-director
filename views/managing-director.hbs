@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managing Director Guinée | SELYS AFRICA Careers</title>
+  <style>
+    :root {
+      --dark: #031314; --dark-2: #061f22; --aqua: #54ddd4; --teal: #0f7d84;
+      --gold: #d7b56d; --white: #f7fffd; --muted: rgba(247,255,253,.72);
+      --soft: rgba(255,255,255,.08); --stroke: rgba(255,255,255,.18);
+      --radius: 30px; --shadow: 0 30px 90px rgba(0,0,0,.38);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(84,221,212,.28), transparent 34%),
+        radial-gradient(circle at 90% 16%, rgba(215,181,109,.18), transparent 30%),
+        radial-gradient(circle at 55% 100%, rgba(15,125,132,.24), transparent 36%),
+        linear-gradient(145deg, #020707 0%, var(--dark) 45%, var(--dark-2) 100%);
+      color: var(--white); overflow-x: hidden;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,.032) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.032) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at center, black, transparent 78%); z-index: 0;
+    }
+    .blob { position: fixed; width: 340px; height: 340px; border-radius: 50%; filter: blur(70px); opacity: .28; z-index: 0; animation: float 9s ease-in-out infinite; }
+    .blob.one { background: var(--aqua); left: -120px; top: 220px; }
+    .blob.two { background: var(--gold); right: -140px; top: 520px; animation-delay: -3s; }
+    @keyframes float { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-28px) scale(1.08); } }
+    .container { width: min(1180px, 92%); margin: 0 auto; position: relative; z-index: 2; }
+    nav { height: 86px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 20; backdrop-filter: blur(22px); }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: .16em; font-size: 13px; text-transform: uppercase; }
+    .logo { width: 42px; height: 42px; border-radius: 15px; background: linear-gradient(145deg, var(--aqua), var(--teal)); display: grid; place-items: center; color: #031314; font-weight: 1000; box-shadow: 0 0 34px rgba(84,221,212,.34); }
+    .nav-links { display: flex; gap: 10px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 750; padding: 11px 14px; border-radius: 999px; transition: .25s ease; }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,.07); }
+    .apply-mini { color: #031314 !important; background: linear-gradient(145deg, var(--aqua), var(--teal)) !important; font-weight: 900 !important; box-shadow: 0 14px 32px rgba(84,221,212,.18); }
+    .hero { min-height: calc(100vh - 86px); display: grid; grid-template-columns: 1.08fr .92fr; gap: 38px; align-items: center; padding: 46px 0 78px; }
+    .kicker { display: inline-flex; align-items: center; gap: 9px; color: var(--aqua); font-size: 12px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; padding: 10px 14px; border: 1px solid rgba(84,221,212,.28); background: rgba(84,221,212,.08); border-radius: 999px; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--aqua); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(84,221,212,.72); } 70% { box-shadow: 0 0 0 11px rgba(84,221,212,0); } 100% { box-shadow: 0 0 0 0 rgba(84,221,212,0); } }
+    h1 { font-size: clamp(48px, 8vw, 92px); line-height: .88; margin: 24px 0 22px; letter-spacing: -.075em; max-width: 840px; }
+    .hero p { color: var(--muted); font-size: 19px; line-height: 1.62; max-width: 760px; margin: 0; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 54px; padding: 15px 22px; border-radius: 18px; text-decoration: none; font-weight: 900; color: var(--white); border: 1px solid var(--stroke); background: rgba(255,255,255,.08); backdrop-filter: blur(18px); transition: .25s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(84,221,212,.58); }
+    .btn.primary { background: linear-gradient(145deg, var(--aqua), var(--teal)); color: #031314; border: 0; }
+    .btn.gold { background: rgba(215,181,109,.14); border-color: rgba(215,181,109,.38); }
+    .glass-panel { position: relative; border: 1px solid var(--stroke); background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.04)), radial-gradient(circle at top, rgba(84,221,212,.16), transparent 45%); backdrop-filter: blur(30px); border-radius: 38px; box-shadow: var(--shadow); overflow: hidden; }
+    .hero-panel { padding: 28px; }
+    .country { width: 86px; height: 86px; border-radius: 26px; display: grid; place-items: center; font-size: 42px; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.16); }
+    .status-info { text-align: right; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .status-info strong { color: var(--white); }
+    .panel-top { position: relative; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+    .chips { position: relative; display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+    .chip { padding: 10px 13px; border-radius: 999px; background: rgba(84,221,212,.1); color: rgba(247,255,253,.86); border: 1px solid rgba(84,221,212,.25); font-size: 13px; font-weight: 800; }
+    .metric-grid { position: relative; display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 22px; }
+    .metric { padding: 18px 14px; border-radius: 22px; background: rgba(255,255,255,.075); border: 1px solid rgba(255,255,255,.12); }
+    .metric strong { display: block; font-size: 24px; line-height: 1; margin-bottom: 6px; }
+    .metric span { color: var(--muted); font-size: 12px; }
+    section { padding: 76px 0; }
+    .section-head { max-width: 860px; margin-bottom: 28px; }
+    .section-head h2 { font-size: clamp(34px, 5vw, 58px); line-height: .98; letter-spacing: -.06em; margin: 0 0 18px; }
+    .section-head p { color: var(--muted); line-height: 1.65; font-size: 18px; margin: 0; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { padding: 26px; border-radius: var(--radius); border: 1px solid var(--stroke); background: linear-gradient(145deg, rgba(255,255,255,.11), rgba(255,255,255,.04)); backdrop-filter: blur(24px); box-shadow: 0 18px 45px rgba(0,0,0,.20); }
+    .icon { width: 46px; height: 46px; border-radius: 18px; display: grid; place-items: center; margin-bottom: 18px; background: rgba(84,221,212,.12); border: 1px solid rgba(84,221,212,.28); color: var(--aqua); font-weight: 1000; font-size: 20px; }
+    .card h3 { margin: 0 0 10px; font-size: 22px; letter-spacing: -.025em; }
+    .card p, .card li { color: var(--muted); line-height: 1.62; font-size: 15px; }
+    ul { margin: 12px 0 0; padding-left: 20px; } li { margin: 8px 0; }
+    .timeline { display: grid; gap: 14px; counter-reset: step; }
+    .step { display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding: 20px; border-radius: 26px; border: 1px solid var(--stroke); background: rgba(255,255,255,.06); backdrop-filter: blur(20px); }
+    .step::before { counter-increment: step; content: counter(step); width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; font-weight: 1000; color: #031314; background: linear-gradient(145deg, var(--aqua), var(--teal)); }
+    .step h3 { margin: 0 0 6px; } .step p { margin: 0; color: var(--muted); line-height: 1.55; }
+    .apply-wrap { display: grid; grid-template-columns: 1fr .86fr; gap: 22px; align-items: stretch; }
+    form { display: grid; gap: 14px; }
+    input, textarea, select { width: 100%; padding: 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.07); color: var(--white); outline: none; font: inherit; }
+    input::placeholder, textarea::placeholder { color: rgba(247,255,253,.44); }
+    textarea { min-height: 130px; resize: vertical; }
+    .notice { color: rgba(247,255,253,.6); font-size: 13px; line-height: 1.5; }
+    .form-status { display: none; padding: 14px; border-radius: 16px; line-height: 1.45; }
+    .form-status.success { display: block; background: rgba(84,221,212,.12); border: 1px solid rgba(84,221,212,.35); }
+    .form-status.error { display: block; background: rgba(255,80,80,.12); border: 1px solid rgba(255,80,80,.35); }
+    .contact-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; }
+    .contact-list { display: grid; gap: 12px; margin-top: 22px; }
+    .contact-item { padding: 15px; border-radius: 20px; background: rgba(255,255,255,.065); border: 1px solid rgba(255,255,255,.11); color: var(--muted); }
+    .contact-item strong { display: block; color: var(--white); margin-bottom: 4px; }
+    footer { padding: 44px 0 56px; color: rgba(247,255,253,.55); text-align: center; font-size: 13px; }
+    .floating-whatsapp { position: fixed; right: 22px; bottom: 22px; z-index: 50; width: 62px; height: 62px; border-radius: 23px; display: grid; place-items: center; text-decoration: none; color: #031314; font-size: 26px; background: linear-gradient(145deg, var(--aqua), var(--teal)); box-shadow: 0 22px 45px rgba(84,221,212,.25); }
+    @media (max-width: 920px) { .hero, .grid-2, .grid-3, .apply-wrap { grid-template-columns: 1fr; } .nav-links a:not(.apply-mini) { display: none; } .metric-grid { grid-template-columns: 1fr; } section { padding: 54px 0; } }
+    @media (max-width: 520px) { .container { width: min(100% - 28px, 1180px); } nav { height: 76px; } .hero { padding-top: 28px; } .hero-panel, .card { padding: 20px; border-radius: 26px; } .cta-row { flex-direction: column; } .btn { width: 100%; } .step { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="blob one"></div>
+  <div class="blob two"></div>
+
+  <a class="floating-whatsapp" href="https://wa.me/2250702065271?text=Bonjour%20Madame%20A%C3%AFcheou%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20concernant%20le%20poste%20de%20Managing%20Director%20Guin%C3%A9e." aria-label="WhatsApp">✆</a>
+
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <div class="logo">S</div>
+        SELYS AFRICA
+      </div>
+      <div class="nav-links">
+        <a href="#mission">Mission</a>
+        <a href="#profil">Profil</a>
+        <a href="#process">Process</a>
+        <a class="apply-mini" href="#postuler">Postuler</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="kicker"><span class="pulse"></span> Recrutement stratégique · Guinée</div>
+        <h1>Managing Director Guinée</h1>
+        <p>SELYS AFRICA recherche une dirigeante ou un dirigeant capable d'installer, développer et incarner notre présence en République de Guinée autour de deux expertises à fort impact : l'archivage numérique et la conception de solutions digitales.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#postuler">Postuler maintenant</a>
+          <a class="btn gold" href="https://wa.me/2250702065271?text=Bonjour%20Madame%20A%C3%AFcheou%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20concernant%20le%20poste%20de%20Managing%20Director%20Guin%C3%A9e.">Échanger sur WhatsApp</a>
+        </div>
+      </div>
+
+      <aside class="glass-panel hero-panel">
+        <div class="panel-top">
+          <div class="country">🇬🇳</div>
+          <div class="status-info">
+            <strong>SELYS AFRICA</strong><br>
+            Country Leadership<br>
+            Conakry · Guinée
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">Archivage numérique</span>
+          <span class="chip">GED · SAE</span>
+          <span class="chip">Solutions digitales</span>
+          <span class="chip">Institutions publiques</span>
+          <span class="chip">Business Development</span>
+          <span class="chip">Leadership</span>
+        </div>
+        <div class="metric-grid">
+          <div class="metric"><strong>2</strong><span>Expertises prioritaires</span></div>
+          <div class="metric"><strong>100</strong><span>Jours pour installer l'élan</span></div>
+          <div class="metric"><strong>∞</strong><span>Ambition régionale</span></div>
+        </div>
+      </aside>
+    </header>
+
+    <section id="mission">
+      <div class="section-head">
+        <h2>Une mission de construction, d'influence et d'impact.</h2>
+        <p>La Managing Director Guinée développe SELYS AFRICA comme partenaire de référence des institutions, entreprises publiques, banques, assurances, collectivités et organisations internationales.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="icon">▣</div>
+          <h3>Gouvernance documentaire & Archivage numérique</h3>
+          <p>Vous développez des projets structurants de modernisation documentaire.</p>
+          <ul>
+            <li>Audit des archives et diagnostic documentaire</li>
+            <li>Plan de classement, records management et gouvernance documentaire</li>
+            <li>Numérisation de masse, OCR et indexation intelligente</li>
+            <li>GED, SAE, dématérialisation et conservation numérique</li>
+            <li>Gestion électronique des courriers et valorisation des fonds documentaires</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">✦</div>
+          <h3>Conception de solutions digitales</h3>
+          <p>Vous pilotez des projets numériques conçus pour améliorer la performance des organisations.</p>
+          <ul>
+            <li>Plateformes métiers, portails institutionnels et portails citoyens</li>
+            <li>Applications web et mobiles</li>
+            <li>Solutions SaaS, automatisation et intelligence artificielle</li>
+            <li>Tableaux de bord décisionnels et pilotage par la donnée</li>
+            <li>UX/UI, interopérabilité et conduite du changement</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Vos responsabilités clés.</h2>
+        <p>Vous développez le marché, représentez le cabinet, structurez les opérations et garantissez l'excellence des missions livrées.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="icon">01</div><h3>Développement stratégique</h3><p>Construire la stratégie pays, identifier les opportunités et positionner SELYS AFRICA sur les projets de transformation prioritaires.</p></div>
+        <div class="card"><div class="icon">02</div><h3>Développement commercial</h3><p>Prospecter, rencontrer les décideurs, conduire les négociations, piloter les propositions et sécuriser les contrats.</p></div>
+        <div class="card"><div class="icon">03</div><h3>Relations institutionnelles</h3><p>Représenter SELYS AFRICA auprès des ministères, directions générales, bailleurs, banques, assurances et partenaires stratégiques.</p></div>
+        <div class="card"><div class="icon">04</div><h3>Pilotage opérationnel</h3><p>Garantir la qualité, les délais, le suivi des budgets, la satisfaction client et l'amélioration continue des projets.</p></div>
+        <div class="card"><div class="icon">05</div><h3>Management local</h3><p>Constituer une équipe guinéenne performante, responsable, engagée et alignée avec les standards du cabinet.</p></div>
+        <div class="card"><div class="icon">06</div><h3>Rayonnement du cabinet</h3><p>Porter la réputation de SELYS AFRICA avec élégance, autorité, constance et ambition.</p></div>
+      </div>
+    </section>
+
+    <section id="profil">
+      <div class="section-head">
+        <h2>Le profil qui fera la différence.</h2>
+        <p>Nous recherchons une personnalité capable de dialoguer avec un Ministre le matin, un Directeur Général l'après-midi et une équipe projet en fin de journée avec la même maîtrise.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="icon">◆</div>
+          <h3>Profil professionnel</h3>
+          <ul>
+            <li>Expérience confirmée en développement B2B ou B2G</li>
+            <li>Bonne compréhension des environnements institutionnels</li>
+            <li>Capacité à gérer des projets complexes</li>
+            <li>Culture digitale solide</li>
+            <li>Compréhension des enjeux documentaires, administratifs ou technologiques</li>
+            <li>Leadership commercial et sens de la négociation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">◇</div>
+          <h3>Profil personnel</h3>
+          <ul>
+            <li>Leadership naturel</li>
+            <li>Excellence relationnelle</li>
+            <li>Élégance professionnelle</li>
+            <li>Esprit entrepreneurial</li>
+            <li>Intelligence émotionnelle</li>
+            <li>Culture du résultat</li>
+            <li>Goût du défi et de l'impact</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="section-head">
+        <h2>Les 100 premiers jours.</h2>
+        <p>La prise de fonction suit une trajectoire claire : comprendre, structurer, développer et accélérer.</p>
+      </div>
+      <div class="timeline">
+        <div class="step"><div><h3>Immersion & cadrage</h3><p>Alignement avec la Présidence, compréhension du portefeuille d'offres, revue des priorités Guinée et identification des cibles stratégiques.</p></div></div>
+        <div class="step"><div><h3>Cartographie du marché</h3><p>Cartographie des institutions, banques, assurances, entreprises publiques, bailleurs et acteurs clés à rencontrer.</p></div></div>
+        <div class="step"><div><h3>Développement du pipeline</h3><p>Organisation des premiers rendez-vous, structuration des opportunités et qualification des projets à fort potentiel.</p></div></div>
+        <div class="step"><div><h3>Activation commerciale</h3><p>Présentation des offres SELYS AFRICA, construction des propositions et lancement des premières missions.</p></div></div>
+      </div>
+    </section>
+
+    <section id="postuler">
+      <div class="apply-wrap">
+        <div class="glass-panel card">
+          <div class="section-head" style="margin-bottom:20px;">
+            <h2>Postuler</h2>
+            <p>Envoyez votre CV et une courte note de motivation. Le formulaire ci-dessous transmet directement votre candidature.</p>
+          </div>
+          <form id="applicationForm">
+            <input id="name" name="name" type="text" placeholder="Nom et prénom" required>
+            <input id="email" name="email" type="email" placeholder="Adresse email" required>
+            <input id="phone" name="phone" type="tel" placeholder="Téléphone / WhatsApp">
+            <select id="experience" name="experience">
+              <option value="">Niveau d'expérience</option>
+              <option>5 à 8 ans</option>
+              <option>8 à 12 ans</option>
+              <option>Plus de 12 ans</option>
+            </select>
+            <textarea id="message" name="message" placeholder="Votre courte note de motivation"></textarea>
+            <button class="btn primary" type="submit" id="submitBtn">Envoyer ma candidature</button>
+            <div id="formStatus" class="form-status"></div>
+            <p class="notice">Joignez votre CV par email si nécessaire.</p>
+          </form>
+        </div>
+
+        <aside class="glass-panel card contact-card">
+          <div>
+            <div class="icon">✉</div>
+            <h3>Contact recrutement</h3>
+            <p>Les candidatures sont reçues par le cabinet et suivies directement par la Présidence.</p>
+            <div class="contact-list">
+              <div class="contact-item"><strong>Email principal</strong>hi@selys-africa.com</div>
+              <div class="contact-item"><strong>Copie Direction</strong>apastes@selys-africa.com</div>
+              <div class="contact-item"><strong>WhatsApp direct</strong>+225 07 02 06 52 71</div>
+            </div>
+          </div>
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:hi@selys-africa.com?cc=apastes@selys-africa.com&subject=Candidature%20Managing%20Director%20Guin%C3%A9e">Email</a>
+            <a class="btn gold" href="https://wa.me/2250702065271?text=Bonjour%20Madame%20A%C3%AFcheou%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20concernant%20le%20poste%20de%20Managing%20Director%20Guin%C3%A9e.">WhatsApp</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      SELYS AFRICA — Nos innovations vous distinguent.<br>
+      Archivage numérique · Solutions digitales · Transformation des organisations
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById('applicationForm');
+    const statusBox = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours...';
+
+      try {
+        const response = await fetch('/api/apply', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            experience: document.getElementById('experience').value,
+            message: document.getElementById('message').value,
+          }),
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.message);
+
+        statusBox.className = 'form-status success';
+        statusBox.textContent = 'Candidature envoyée avec succès. Merci pour votre intérêt pour SELYS AFRICA.';
+        form.reset();
+      } catch (err) {
+        statusBox.className = 'form-status error';
+        statusBox.textContent = err.message || "Erreur lors de l'envoi. Veuillez réessayer.";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer ma candidature';
+      }
+    });
+  </script>
+</body>
+</html>
