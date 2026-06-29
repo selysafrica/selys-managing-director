@@ -4,45 +4,9 @@ services:
     container_name: selys-md-app
     restart: unless-stopped
     env_file: .env
-    expose:
-      - "3222"
-    networks:
-      - internal
-
-  nginx:
-    image: nginx:1.27-alpine
-    container_name: selys-md-nginx
-    restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/conf.d:/etc/nginx/conf.d:ro
-      - certbot-www:/var/www/certbot:ro
-      - certbot-certs:/etc/letsencrypt:ro
-    depends_on:
-      - app
-    networks:
-      - internal
-
-  certbot:
-    image: certbot/certbot:latest
-    container_name: selys-md-certbot
-    volumes:
-      - certbot-www:/var/www/certbot
-      - certbot-certs:/etc/letsencrypt
-    entrypoint: >
-      sh -c "trap exit TERM;
-             while :; do
-               certbot renew --webroot -w /var/www/certbot --quiet;
-               sleep 12h & wait $${!};
-             done"
-
-volumes:
-  certbot-www:
-  certbot-certs:
+      - "127.0.0.1:3222:3222"
 
 networks:
-  internal:
+  default:
     driver: bridge
